@@ -1,0 +1,7 @@
+services:
+    ip_seo.form.type:
+        class: Ip\SeoBundle\Form\Type\IpMetaDescType
+        arguments:
+            - '%ip_seo.assets_path%'
+        tags:
+            - { name: form.type }

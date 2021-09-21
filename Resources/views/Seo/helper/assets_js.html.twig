@@ -1,0 +1,13 @@
+<script>
+    function afterLoadIpSeo(){
+        $.getScript("{{ asset("#{prefix}/plugins/googleResult/js/google-result.js") }}", function(){
+            $('#googleresult').googleResult({
+                'title': $('.titlepage').first(),
+                'desc': '#{{ formid }}'
+            });
+        });
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+        afterLoadIpSeo();
+    });
+</script>

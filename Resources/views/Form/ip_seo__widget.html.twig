@@ -1,0 +1,18 @@
+{% block ip_meta_desc_widget %}
+    {% spaceless %}
+        {{ include('@IpSeo/Seo/helper/assets_css.html.twig', {'prefix': form.vars.prefix}) }}
+        {{ include("@IpSeo/Seo/helper/assets_js.html.twig", {'prefix': form.vars.prefix, 'formid': form.vars.id}) }}
+        <div class="form-group">
+            <div class="col-md-6">
+                <textarea id="{{ form.vars.id }}" class="form-control" {{ block('widget_attributes') }}>{% if value is not empty %}{{ value }}{% endif %}</textarea>
+                <span id="helpBlock2" class="help-block">La description doit être comprise entre 150 et 160 caractères pour être visible complétement sinon elle sera tronquée par Google</span>
+                <span id="counterchar" class="help-block"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="googleresult" data-defaultitle="Titre de la page" data-urlsite="{{ app.request.schemeAndHttpHost }}"></div>
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock ip_meta_desc_widget %}
